@@ -22,9 +22,8 @@
 
 任何支持自定义 Skill / Agent / 系统提示词的 AI 编程助手都能用：
 
-- Claude Code / Trae / Qoder / CodeBuddy 等
-- 各类 Claude 套壳/增强客户端
-- 其他支持 Markdown 指令的 AI 编程工具（直接贴 SKILL.md 到提示词）
+- Claude Code / Trae / Qoder / CodeBuddy / 各种 Claw 等
+- 其他支持 Markdown 指令或自定义 Skill 的 AI 编程工具（直接贴 SKILL.md 到提示词）
 
 ## 安装
 
