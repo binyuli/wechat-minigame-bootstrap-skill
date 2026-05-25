@@ -1,10 +1,10 @@
 # wechat-minigame-bootstrap
 
-> Claude Code Skill — 一句话生成完整的微信小游戏项目骨架
+> AI 编程助手 Skill — 一句话生成完整的微信小游戏项目骨架
 
 ## 这是什么？
 
-这是一个 [Claude Code](https://claude.com/claude-code) Skill，安装后你只需要说一句"帮我创建一个小游戏"，就能自动生成一套完整的微信小游戏 Canvas 2D 项目，包含：
+这是一个通用的 AI 编程助手 Skill，安装后你只需要对 AI 说一句"帮我创建一个小游戏"，就能自动生成一套完整的微信小游戏 Canvas 2D 项目，包含：
 
 - 游戏入口 + 游戏循环 + 屏幕管理器
 - DPR 适配 + 安全区域处理
@@ -18,23 +18,39 @@
 
 生成的代码全部使用 ES5 + CommonJS，无需构建工具，微信开发者工具直接打开就能跑。
 
+## 适合的 AI 编程助手
+
+任何支持自定义 Skill / Agent / 系统提示词的 AI 编程助手都能用：
+
+- Claude Code / Trae / Qoder / CodeBuddy 等
+- 各类 Claude 套壳/增强客户端
+- 其他支持 Markdown 指令的 AI 编程工具（直接贴 SKILL.md 到提示词）
+
 ## 安装
 
 ```bash
-# 克隆到 Claude Code skills 目录
-git clone https://github.com/binyuli/wechat-minigame-bootstrap-skill.git ~/.claude/skills/wechat-minigame-bootstrap
+# 克隆仓库
+git clone https://github.com/binyuli/wechat-minigame-bootstrap-skill.git
+# 或 Gitee（国内更快）
+git clone https://gitee.com/binyuli/wechat-minigame-bootstrap-skill.git
 ```
 
-安装后，在 Claude Code 中输入 `/wechat-minigame-bootstrap` 即可触发。
+把 `SKILL.md` 文件放入你所用工具的 Skill/Agent 目录即可：
+
+- **Claude Code**: `~/.claude/skills/wechat-minigame-bootstrap/`
+- **Trae / Qoder / CodeBuddy**: 放入对应工具的 Skill 目录
+- **其他工具**: 把 SKILL.md 内容贴到系统提示词中
+
+安装后对 AI 说"帮我创建一个微信小游戏"即可触发。
 
 ## 使用方法
 
 ### 1. 触发 Skill
 
-在 Claude Code 对话中输入：
+对 AI 编程助手说：
 
 ```
-/wechat-minigame-bootstrap 帮我创建一个小游戏
+帮我创建一个微信小游戏
 ```
 
 ### 2. 回答几个问题
@@ -126,11 +142,25 @@ if (draw.hit(touchX, touchY, bounds.x, bounds.y, bounds.w, bounds.h)) {
 - **DPR 缩放只处理一次** — init 中 scale(dpr, dpr)，后续全用逻辑像素
 - **安全区域** — UI 元素从 `G.safeArea.top` 以下开始绘制
 
+## 成功案例
+
+**凑24** — 基于 Skill 模板架构开发的 24 点数学卡牌游戏，已上线微信小游戏平台。支持关卡模式、实时对战（WebSocket）、排行榜。
+
+![凑24小程序码](docs/qr-24game.jpg)
+
+微信搜索"凑24"或扫码体验。
+
 ## 环境要求
 
-- [Claude Code](https://claude.com/claude-code) CLI
+- 任意支持 Skill/Agent 的 AI 编程助手
 - [微信开发者工具](https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html)
 - 微信小游戏 AppID（或使用 `tourist` 模式本地开发）
+
+## 仓库地址
+
+https://github.com/binyuli/wechat-minigame-bootstrap-skill
+
+国内用户推荐通过 Gitee 或 Codeup 克隆，速度更快。
 
 ## License
 
